@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/resepti.js" type="application/javascript"></script>
+    <script>
+        var arr = haeReseptit();
+        function myFunction(arr) { // 5
+            var out = "";
+            var i;
+            out += '<table cellspacing="30" >';
+            out += '<td>'+'Reseptin IDi'+'</td>';
+            out += '<td>'+'Reseptin Nimi'+'</td>';
+            out += '<td>'+'Reseptin Kuvaus'+'</td>';
+
+            for(i = 0; i < arr.length; i++) {
+                out += '<tr>';
+                out += '<td>' + arr[i].id + '</td>'
+                    + '<td>' + arr[i].nimi + '</td>'
+                    + '<td>' + arr[i].kuvaus + '</td>';
+                out += '</tr>';
+
+            }
+
+            out += '</table>';
+            document.getElementById("reseptit").innerHTML = out; // 6
+        }
+    </script>
+</head>
+<body>
+<div id="reseptit"></div>
+</body>
+</html>
