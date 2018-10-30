@@ -1,6 +1,7 @@
 "# babbys-first-api" 
 Tämä api näyttää käyttäjälle reseptejä. Apin kautta pystyy lisäämään tietokantaan
 omia reseptejä ja hakemaan sieltä
+(Pitää alustaa ensin MySQL-tietokanta ajamalla AlustaTietokanta.sql-tiedosto)
 
 Api-kutsut: 
 
