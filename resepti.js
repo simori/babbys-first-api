@@ -34,7 +34,7 @@ app.post('/lisaaresepti', function (req, res, next) {
     var dessu = req.body.kuvaus;
     var sql = 'INSERT INTO resepti (nimi, kuvaus) VALUES (\'' + nimi + '\', \'' + dessu + '\')';
     con.query(sql, function (err, res, fields) {
-        if (err) throw (err);
+        if (err) res.status(500).end();
     });
     res.sendfile('html/index.html');
 })
@@ -45,7 +45,7 @@ app.post('/haku', function (req, res, next) {
     var sql = "SELECT nimi, kuvaus FROM resepti WHERE kuvaus LIKE \'hakusana\'";
 
     haeYksiResepti(function (err, result) {
-        if (err) console.log("Database error!" + err);
+        if (err) {console.log("Database error!" + err); res.status(500).end();}
         else res.send(result);
     }, hakusana);
 
@@ -80,11 +80,7 @@ app.get('/lisaaresepti', function (req, res) {
 app.get('/admin', function (req, res) {
     res.sendfile('html/admin.html');
 })
-
-app.get('/db', function (req, res) {
-    res.send(result);
-})
-// API poäättyy
+// API päättyy
 
 // Hae ID:n perusteella
 var haeId = function(callback, id) {
