@@ -1,7 +1,9 @@
 "# babbys-first-api" 
 Tämä api näyttää käyttäjälle reseptejä. Apin kautta pystyy lisäämään tietokantaan
 omia reseptejä ja hakemaan sieltä
-(Pitää alustaa ensin MySQL-tietokanta ajamalla AlustaTietokanta.sql-tiedosto)
+(Pitää alustaa ensin MySQL-tietokanta ajamalla AlustaTietokanta.sql-tiedosto,
+Sovellus lähtee käyntiin kun ajaa projektin juuressa sijaitsevan resepti.js-tiedoston 
+ja menee osoitteeseen http://127.0.0.1:8081/)
 
 Api-kutsut: 
 
